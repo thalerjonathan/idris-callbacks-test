@@ -1,0 +1,10 @@
+package idris-callbacks-test
+
+opts = "-p contrib"
+
+makefile = MakefileC
+
+main = Main
+executable = idrisclbktest
+
+objs = idris_clbks_test.o, idris_clbks_test.h

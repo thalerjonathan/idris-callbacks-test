@@ -1,0 +1,11 @@
+CC = gcc
+CFLAGS = `idris --include`
+
+idris_clbks_test.o: config idris_clbks_test.c idris_clbks_test.h 
+
+config: .PHONY
+
+clean: .PHONY
+	rm idris_clbks_test.o
+
+.PHONY:
