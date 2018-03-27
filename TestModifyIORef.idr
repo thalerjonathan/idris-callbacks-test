@@ -4,6 +4,7 @@ import Data.IORef
 
 %include C "idris_clbks_test.h"
 %link C "idris_clbks_test.o"
+%flag C "-g"
 
 TestCallback : Type
 TestCallback = Int -> ()
@@ -12,6 +13,9 @@ testCallbackPure : IORef Integer -> Int -> ()
 testCallbackPure ref x = unsafePerformIO $ do 
   putStrLn "before modifyIORef"
   modifyIORef ref (+1) -- segmentation fault occurs here
+  --writeIORef ref 42
+  --ret <- readIORef ref
+  --putStrLn $ "readIORef: " ++ show ret
   putStrLn "after modifyIORef"
 
 testCallbackPurePtr : IORef Integer -> IO Ptr

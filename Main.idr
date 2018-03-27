@@ -2,4 +2,4 @@ import TestModifyIORef
 import TestRunIOAction
 
 main : IO ()
-main = TestRunIOAction.run -- TestModifyIORef.run TestRunIOAction.run
+main = TestModifyIORef.run -- TestModifyIORef.run TestRunIOAction.run
